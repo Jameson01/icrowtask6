@@ -128,7 +128,7 @@ app.get("/detail", async function (req, res) {
   }
 });
 
-app.listen(2020, (req, res) => {
+app.listen(process.env.PORT || 2020, (req, res) => {
   console.log("Server is running successfullly!");
 });
 
