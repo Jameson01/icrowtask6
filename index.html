@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+    <div class="reg-container">
+        <div style="color: cadetblue; font-size: 24px">
+            <div>Request Registration</div>
+            <div>Create an iCrowTask Account</div>
+        </div>
+
+
+        <form method="post" action="/register">
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select class="form-control" name="country" id="Country">
+                    <option>Australia</option>
+                    <option>New Zealand</option>
+                    <option>China</option>
+                    <option>Japan</option>
+                    <option>Korea</option>
+                    <option>UK</option>
+                    <option>USA</option>
+                    <option>India</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input id="firstName" type="text" class="form-control" name="firstName" required id="Fname" >
+                <label for="lastName">Last Name</label>
+                <input id="lastName" type="text" class="form-control" name="lastName" required id="Lname" >
+            </div>
+
+            <div class="form-group">
+                <label for="Email">E-Mail Address</label>
+                <input id="Email" type="email" class="form-control" name="email" required >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="form-control"  name="password" required >
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Re-type Password</label>
+                <input type="password" class="form-control"  id="confirmPassword" name="rePassword" >
+                <span id="titlePassword"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <input id="Address" type="text" class="form-control" name="address" required >
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label for="city">City</label>
+                        <input id="city" type="text" class="form-control" name="city" required >
+                    </div>
+                    <div class="col-xs-5">
+                        <label for="state">State, Province or Region</label>
+                        <input id="state" type="text" class="form-control" required name="stateInfo" >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="zip">ZIP/Postal Code</label>
+                <input id="zip" type="text" class="form-control" name="postCode" required >
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Mobile Number</label>
+                <input id="phone" type="text" class="form-control" name="mobilePhone"
+                    placeholder="Input 10-digit number starts with 04 for mobile phone number.">
+            </div>
+            <div class="d-flex" style="width: 200px; margin: 0 auto; margin-bottom: 50px">
+                <input type="submit" class="btn btn-info" value="create account" width="100%" disabled>
+                <a href="/" class="btn ml-5">Sign in</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+    $('#confirmPassword').keyup(checkPassword);
+    $('#password').keyup(checkPassword);
+    function checkPassword() {
+      if ($('#confirmPassword').val() == $('#password').val()) {
+        if ($('#confirmPassword').val().length < 8) {
+          $('#titlePassword').text('password too short!')
+          $('.btn-info').attr('disabled', 'disabled');
+        } else {
+          $('#titlePassword').text('Same password!')
+          $('.btn-info').removeAttr("disabled");
+        }
+      } else {
+        $('#titlePassword').text('Wrong password!')
+        $('.btn-info').attr('disabled', 'disabled');
+      }
+    }
+    $('.btn-info').click(() => {
+        console.log('123')
+    })
+</script>

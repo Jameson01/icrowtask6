@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detail</title>
+</head>
+<body>
+<h2>List</h2>
+<table>
+    <thead>
+    <tr>
+        <td>fname</td>
+        <td>lname</td>
+        <td>country</td>
+        <td>address</td>
+        <td>city</td>
+        <td>stateInfo</td>
+        <td>postCode</td>
+        <td>mobilePhone</td>
+        <td>email</td>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i=0;i < list.length;i++){%>
+    <tr>
+        <td><%= list[i].fname %></td>
+        <td><%= list[i].lname %></td>
+        <td><%= list[i].country %></td>
+        <td><%= list[i].address %></td>
+        <td><%= list[i].city %></td>
+        <td><%= list[i].stateInfo %></td>
+        <td><%= list[i].postCode %></td>
+        <td><%= list[i].mobilePhone %></td>
+        <td><%= list[i].email %></td>
+    </tr>
+    <%}%>
+    </tbody>
+</table>
+</body>
+</html>

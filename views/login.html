@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+          integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+            crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/css/index.css'/>
+    <title>Login</title>
+</head>
+<body>
+<div class="container text-center border">
+    <h3>iCrowdTask Login</h3>
+    <div class="content border p-4 m-3">
+        <p class="d-flex justify-content-between">
+            <span class="mr-5 font-weight-bolder">Sign in</span>
+            <a class="btn btn-outline-primary" href="/register">Sign up</a>
+        </p>
+        <form action="/login" method="post" class="w-100">
+            <div class="mt-3">
+                <label for="email" class="w-100">
+                    <div class="text-left mb-2">Your Email</div>
+                    <input name="email" type="text" id="email" class="w-100">
+                </label>
+            </div>
+            <div class="mt-3">
+                <label for="password" class="w-100">
+                    <div class="text-left mb-2"><span>Your password</span>
+<!--                        <a href="#" class="float-right">Forgot?</a>-->
+                    </div>
+                    <input name="password" type="text" id="password" class="w-100">
+                </label>
+            </div>
+            <div class="mt-3">
+                <label for="save" class="w-100 d-flex align-items-center">
+                    <input type="checkbox" name="save" id="save" class="mr-2">Save password
+                </label>
+            </div>
+            <button type="submit" class="btn d-block text-center m-auto btn-primary w-100 mt-3">Login</button>
+        </form>
+        <a href="<%= url %>" class="btn btn-primary w-100 mt-3 position-relative">
+            <i class="google d-block position-absolute"></i>
+            Sign in with Google
+        </a>
+    </div>
+</div>
+</body>
+</html>
